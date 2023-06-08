@@ -1,0 +1,10 @@
+version: "3"
+services:
+  redis:
+    image: redis
+    ports:
+      - "6380:6379"
+  pyspark_app:
+    build: .
+    depends_on:
+      - redis
